@@ -1,0 +1,44 @@
+<div class="form-container">
+    <h2>Simple Form</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" [(ngModel)]="name" name="Name" required />
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="example@example.com" [(ngModel)]="email" name="Email" />
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" rows="4" placeholder="Enter a message" [(ngModel)]="message" name="Message"
+                required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- <div *ngIf="isSubmitted">
+        <h3>Form Data:</h3>
+        <p><strong>Name:</strong><em> {{name}}</em></p>
+        <p><strong>Email:</strong><em> {{email}}</em></p>
+        <p><strong>Message:</strong><em> {{message}}</em></p>
+    </div> -->
+    <table *ngIf="isSubmitted">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let msg of this.Messages; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{msg.name}}</td>
+                <td>{{msg.email}}</td>
+                <td>{{msg.message}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -3,16 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MyFirstCompComponent } from './my-first-comp/my-first-comp.component';
+import { FormsModule } from '@angular/forms';
+import { MySecondCompComponent } from './my-second-comp/my-second-comp.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyFirstCompComponent,
+    MySecondCompComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [],//Set of services
   bootstrap: [AppComponent]
 })
 export class AppModule { }
